@@ -106,42 +106,87 @@
 // };
 
 // 4. object.create
-const methodSiswa = {
-    avgNilai : function(){
-        let totalNilai = 0;
-        for (let i = 0; i < this.nilaiSemester1.length; i++){
-            totalNilai += this.nilaiSemester1[i]
-        }
-        return totalNilai / this.nilaiSemester1.length
-    }
-} 
+// const methodSiswa = {
+//     avgNilai : function(){
+//         let totalNilai = 0;
+//         for (let i = 0; i < this.nilaiSemester1.length; i++){
+//             totalNilai += this.nilaiSemester1[i]
+//         }
+//         return totalNilai / this.nilaiSemester1.length
+//     }
+// } 
 
-let Siswa = function(nama, kelas, nilaiSemester1){
-    let siswa = Object.create(methodSiswa);
-    siswa.nama = nama
-    siswa.kelas = kelas
-    siswa.nilaiSemester1 = nilaiSemester1
-    return siswa;
-}
+// let Siswa = function(nama, kelas, nilaiSemester1){
+//     let siswa = Object.create(methodSiswa);
+//     siswa.nama = nama
+//     siswa.kelas = kelas
+//     siswa.nilaiSemester1 = nilaiSemester1
+//     return siswa;
+// }
 
-let siswaArray = [];
-let tambahSiswa = function(){
-    let jumlahSiswa = parseInt(prompt("Masukkan jumlah siswa yang akan di input :"));
+// let siswaArray = [];
+// let tambahSiswa = function(){
+//     let jumlahSiswa = parseInt(prompt("Masukkan jumlah siswa yang akan di input :"));
     
-    for (let i = 0; i < jumlahSiswa; i++){
-        let nilaiSiswaArray = [];
-        let namaSiswa = prompt("Masukkan nama Siswa");
-        let kelasSiswa = prompt("Masukkan kelas siswa");
-        for (let i = 0; i < 3; i++){
-            let nilaiSemester1Siswa = parseInt(prompt("Masukkan nilai siswa pada semester 1"));
-            nilaiSiswaArray.push(nilaiSemester1Siswa);
-        }
+//     for (let i = 0; i < jumlahSiswa; i++){
+//         let nilaiSiswaArray = [];
+//         let namaSiswa = prompt("Masukkan nama Siswa");
+//         let kelasSiswa = prompt("Masukkan kelas siswa");
+//         for (let i = 0; i < 3; i++){
+//             let nilaiSemester1Siswa = parseInt(prompt("Masukkan nilai siswa pada semester 1"));
+//             nilaiSiswaArray.push(nilaiSemester1Siswa);
+//         }
         
-        // Create a new Siswa object and push it to the array
-        let siswa = new Siswa(namaSiswa, kelasSiswa, nilaiSiswaArray);
-        siswaArray.push(siswa);
-    }
+//         // Create a new Siswa object and push it to the array
+//         let siswa = new Siswa(namaSiswa, kelasSiswa, nilaiSiswaArray);
+//         siswaArray.push(siswa);
+//     }
 
-    // Do something with the siswaArray, like displaying it or further processing
-    console.log(siswaArray);
-};
+//     // Do something with the siswaArray, like displaying it or further processing
+//     console.log(siswaArray);
+// };
+
+// 5. Prototype
+// let Mahasiswa = function(nama, energi){
+//     this.nama = nama;
+//     this.energi = energi;
+// } 
+// Mahasiswa.prototype.makan = function(porsi){
+//     this.energi += porsi;
+//     return `selemat makan ${this.nama}, !`
+// }
+// Mahasiswa.prototype.main = function(jam){
+//     this.energi -= jam;
+//     return `selemat main ${this.nama}, !`
+// }
+// Mahasiswa.prototype.tidur = function(jam){
+//     this.energi += jam*2;
+//     return `selemat tidur ${this.nama}, !`
+// }
+
+// ryan = new Mahasiswa("ryan", 10)
+
+// 6. versi class
+
+class Mahasiswa {
+    constructor(nama, energi){
+        this.nama = nama;
+        this.energi = energi;
+    }
+    
+    makan(porsi){
+        this.energi += porsi;
+        return `selemat makan ${this.nama}, !`
+    }
+    main(jam){
+        this.energi -= jam;
+        return `selemat main ${this.nama}, !`
+    }
+    tidur(jam){
+        this.energi += jam*2;
+        return `selemat tidur ${this.nama}, !`
+    }
+}
+ryan = new Mahasiswa("ryan", 10)
+
+let arrayyan = ['b', 3];
