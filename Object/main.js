@@ -39,9 +39,9 @@ let tambahSiswa = function(){
     let k = 'siswa';
     let jumlahSiswa = parseInt(prompt("Masukkan jumlah siswa yang akan di input :"));
     let siswaArray = [];
-    let nilaiSiswaArray = [];
     
     for (let i = 0; i < jumlahSiswa; i++){
+        let nilaiSiswaArray = [];
         let namaSiswa = prompt("Masukkan nama Siswa");
         let kelasSiswa = prompt("Masukkan kelas siswa");
         for (let i = 0; i < 3; i++){
@@ -50,7 +50,11 @@ let tambahSiswa = function(){
         }
         
         // Create a Siswa object and push it to the array
-        let siswa = { nama: namaSiswa, kelas: kelasSiswa, nilaiSemester1: nilaiSiswaArray };
+        let siswa = { 
+            nama: namaSiswa, 
+            kelas: kelasSiswa, 
+            nilaiSemester1: nilaiSiswaArray 
+        };
         siswaArray.push(siswa);
     }
 
