@@ -32,8 +32,32 @@ let Siswa = function(nama, kelas, nilaiSemester1){
         }
         return totalNilai / this.nilaiSemester1.length
     }
-    return siswa
+    return siswa;
 }
+
+let tambahSiswa = function(){
+    let k = 'siswa';
+    let jumlahSiswa = parseInt(prompt("Masukkan jumlah siswa yang akan di input :"));
+    let siswaArray = [];
+    let nilaiSiswaArray = [];
+    
+    for (let i = 0; i < jumlahSiswa; i++){
+        let namaSiswa = prompt("Masukkan nama Siswa");
+        let kelasSiswa = prompt("Masukkan kelas siswa");
+        for (let i = 0; i < 3; i++){
+            let nilaiSemester1Siswa = parseInt(prompt("Masukkan nilai siswa pada semester 1"));
+            nilaiSiswaArray.push(nilaiSemester1Siswa);
+        }
+        
+        // Create a Siswa object and push it to the array
+        let siswa = { nama: namaSiswa, kelas: kelasSiswa, nilaiSemester1: nilaiSiswaArray };
+        siswaArray.push(siswa);
+    }
+
+    // Do something with the siswaArray, like displaying it or further processing
+    console.log(siswaArray);
+};
+
 let siswa1 = Siswa("mahatma", "XII TKJ 5", [92,92,99])
 let siswa2 = Siswa("mute", "XII TKJ 5", [96,95,99])
 
