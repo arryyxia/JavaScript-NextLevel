@@ -27,16 +27,17 @@
 // hoisting
 
 var nama = "ryan";
-var username = "@mht.aryn"
+var username = "@mht.aryn";
 
-function cetakUrl(username){
-    var urlIG = `https://instagram.com/profile/${username}`
-    console.log(arguments[0])
+function cetakUrl(){
 
-    return urlIG
+    var urlIG = `https://instagram.com/profile/${username}`;
+    console.log(arguments);
+
+    return urlIG;
 }
 
-console.log(cetakUrl("@arryyxia"))
+console.log(cetakUrl("@arryyxia", "@align.space"))
 
 // function a(){
 //     console.log("ini adalah function a")
@@ -55,11 +56,33 @@ console.log(cetakUrl("@arryyxia"))
 
 
 
+function init(){
+    // let nama = "ryan"
+    return function (nama){
+        console.log(nama)
+    }
+}
 
+// function factory
+let panggilNama = init()
+// panggilNama('sadasd')
 
+// kenapa membuat closure
+// 1. untuk membuat function factory
+function ucapkanSalam(waktu){
+    return function(nama){
+        console.log(`halo ${nama}, selamat ${waktu}, semoga hari mu menyenangkan`)
+    }
+}
 
+let selamatPagi = ucapkanSalam("pagi")
+let selamatSiang = ucapkanSalam("siang")
+let selamatMalam = ucapkanSalam("malam")
 
+console.dir(selamatPagi("reja"))
 
+console.log(padail);
+var padail = "nama"
 
 
 
