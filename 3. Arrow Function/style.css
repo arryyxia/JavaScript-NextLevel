@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    border: solid black;
+    height: 300px;
+    width: 300px;
+    margin: 100px auto;
+    transition: .3s;
+}
+
+.size{
+    height: 350px;
+    width: 350px;
+    margin-top: 50px;
+}
+
+.caption{
+    background-color: black;
+}
+

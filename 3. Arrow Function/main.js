@@ -64,3 +64,30 @@ const dataDiri = {
     }
 }
 
+// const DataRyan = function(){
+//     this.nama = 'ryan',
+//     this.umur = '18'
+//     // tapi method bisa
+//     this.hai  = ()=>{
+//         return `halo nama saya ${this.nama}, saya sekarang umur ${this.umur}`
+//     }
+
+    // jika menggunakan function biasa, this akan mengacu kepada window
+    // jika pakai arrow function this akan mencari ke atas
+//     setInterval(() =>{
+//         console.log(this.umur++);
+//     }, 500);
+// }
+// const dataRyan = new DataRyan();
+
+// jadi dimana kita pakai arrow function?
+
+
+
+
+
+
+
+
+
+
