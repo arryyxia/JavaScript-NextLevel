@@ -29,12 +29,38 @@ console.table(tbNamaMahasiswa)
 // bagaimana jika kita menggunakan this?
 
 // sekarang kit akan belajar konsep this pada arrow funciton
+// ini bentuk normalnya
+// const Mahasiswa = function(){
+//     this.nama = 'ryan',
+//     this.umur = '18'
+//     this.hai  = function(){
+//         return `halo nama saya ${this.nama}, saya sekarang umur ${this.umur}`
+//     }
+// }
+
+// const ryan = new Mahasiswa();
+
+// ternyata gak bisa di ubah
 const Mahasiswa = function(){
     this.nama = 'ryan',
     this.umur = '18'
-    this.hai  = function(){
+    // tapi method bisa
+    this.hai  = ()=>{
         return `halo nama saya ${this.nama}, saya sekarang umur ${this.umur}`
     }
 }
 
 const ryan = new Mahasiswa();
+
+// bagaimana kalau object literal?
+// apakah method masih bisa di singkat atau ada masalah laiN?
+// ternyata arrow function pada object literal tidak memiliki konsep this/
+const dataDiri = {
+    nama : 'muh. mahatma arrayyan',
+    umur : 18,
+    hai : () => {
+        // return `halo saya ${this.nama}, umur ku ${this.umur}`
+        console.log(this)
+    }
+}
+
