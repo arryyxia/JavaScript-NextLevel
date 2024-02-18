@@ -82,7 +82,30 @@ const dataDiri = {
 
 // jadi dimana kita pakai arrow function?
 
+// ini adalah cara normal yang biasa ku lakukan dengan dom
+// const box = document.querySelector('.box');
+// box.addEventListener('click', ()=>{
+//     setTimeout(function(){
+//         box.classList.toggle('caption')
+//     }, 600)
+//     box.classList.toggle('size')
+// })
 
+// ini cara pakai arrow function dan this thas thoooss
+const boxThis = document.querySelector('.box');
+boxThis.addEventListener('click', function (){
+    let satu = 'size';
+    let dua = 'caption';
+
+    if(this.classList.contains(satu)){
+        [satu, dua]=[dua, satu]
+    }
+
+    setTimeout(()=>{
+        this.classList.toggle(dua)
+    }, 600)
+    this.classList.toggle(satu)
+})
 
 
 
