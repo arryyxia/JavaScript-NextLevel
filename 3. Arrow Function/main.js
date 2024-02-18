@@ -25,3 +25,16 @@ let tbNamaMahasiswa = namaMahasiswa.map(nama =>({
     nama, charNama: nama.length
 }))
 console.table(tbNamaMahasiswa)
+
+// bagaimana jika kita menggunakan this?
+
+// sekarang kit akan belajar konsep this pada arrow funciton
+const Mahasiswa = function(){
+    this.nama = 'ryan',
+    this.umur = '18'
+    this.hai  = function(){
+        return `halo nama saya ${this.nama}, saya sekarang umur ${this.umur}`
+    }
+}
+
+const ryan = new Mahasiswa();
